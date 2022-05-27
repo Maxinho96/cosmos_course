@@ -1,0 +1,15 @@
+syntax = "proto3";
+package b9lab.cosmosacademyexercisesimple.cosmosacademyexercisesimple;
+
+option go_package = "github.com/b9lab/cosmos-academy-exercise-simple/x/cosmosacademyexercisesimple/types";
+
+import "gogoproto/gogo.proto";
+
+
+message WorldParams2 {
+  uint64 id = 1;
+  string name = 2; 
+  uint64 gravity = 3; 
+  uint64 landSupply = 4; 
+  
+}

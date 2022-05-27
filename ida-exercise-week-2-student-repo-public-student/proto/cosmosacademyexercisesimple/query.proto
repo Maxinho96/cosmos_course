@@ -1,0 +1,58 @@
+syntax = "proto3";
+package b9lab.cosmosacademyexercisesimple.cosmosacademyexercisesimple;
+
+import "gogoproto/gogo.proto";
+import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
+import "cosmosacademyexercisesimple/params.proto";
+import "cosmosacademyexercisesimple/world_params_2.proto";
+// this line is used by starport scaffolding # 1
+
+option go_package = "github.com/b9lab/cosmos-academy-exercise-simple/x/cosmosacademyexercisesimple/types";
+
+// Query defines the gRPC querier service.
+service Query {
+  // Parameters queries the parameters of the module.
+  rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
+    option (google.api.http).get = "/b9lab/cosmos-academy-exercise-simple/cosmosacademyexercisesimple/params";
+  }
+  // Queries a worldParams2 by id.
+	rpc WorldParams2(QueryGetWorldParams2Request) returns (QueryGetWorldParams2Response) {
+		option (google.api.http).get = "/b9lab/cosmosacademyexercisesimple/cosmosacademyexercisesimple/worldParams2/{id}";
+	}
+
+	// Queries a list of worldParams2 items.
+	rpc WorldParams2All(QueryAllWorldParams2Request) returns (QueryAllWorldParams2Response) {
+		option (google.api.http).get = "/b9lab/cosmosacademyexercisesimple/cosmosacademyexercisesimple/worldParams2";
+	}
+
+// this line is used by starport scaffolding # 2
+}
+
+// QueryParamsRequest is request type for the Query/Params RPC method.
+message QueryParamsRequest {}
+
+// QueryParamsResponse is response type for the Query/Params RPC method.
+message QueryParamsResponse {
+  // params holds all the parameters of this module.
+  Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryGetWorldParams2Request {
+	uint64 id = 1;
+}
+
+message QueryGetWorldParams2Response {
+	WorldParams2 WorldParams2 = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryAllWorldParams2Request {
+	cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryAllWorldParams2Response {
+	repeated WorldParams2 WorldParams2 = 1 [(gogoproto.nullable) = false];
+	cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+// this line is used by starport scaffolding # 3
