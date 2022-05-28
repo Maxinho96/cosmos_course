@@ -8,7 +8,6 @@ import (
 
 // x/checkers module sentinel errors
 var (
-	ErrSample = sdkerrors.Register(ModuleName, 1100, "sample error")
 	// this line is used by starport scaffolding # ibc/errors
 	ErrInvalidCreator   = sdkerrors.Register(ModuleName, 1100, "creator address is invalid: %s")
 	ErrInvalidRed       = sdkerrors.Register(ModuleName, 1101, "red address is invalid: %s")
