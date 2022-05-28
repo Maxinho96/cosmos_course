@@ -10,7 +10,7 @@
 			// Use -bullseye variants on local arm64/Apple Silicon.
 			"VARIANT": "1.17",
 			// Options
-			"NODE_VERSION": "15"
+			"NODE_VERSION": "16"
 		}
 	},
 	"runArgs": [
@@ -23,7 +23,10 @@
 		"terminal.integrated.defaultProfile.linux": "zsh",
 		"go.toolsManagement.checkForUpdates": "local",
 		"go.useLanguageServer": true,
-		"go.gopath": "/go"
+		"go.gopath": "/go",
+		"gopls": {
+			"experimentalWorkspaceModule": true
+		}
 	},
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
