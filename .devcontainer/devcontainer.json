@@ -25,7 +25,8 @@
 		"go.useLanguageServer": true,
 		"go.gopath": "/go",
 		"gopls": {
-			"experimentalWorkspaceModule": true
+			"experimentalWorkspaceModule": true,
+			"ui.semanticTokens": true
 		}
 	},
 	// Add the IDs of extensions you want installed when the container is created.
