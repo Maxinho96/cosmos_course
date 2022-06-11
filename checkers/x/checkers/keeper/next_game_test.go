@@ -1,15 +1,15 @@
-package keeper
+package keeper_test
 
 import (
 	"testing"
 
+	"github.com/alice/checkers/x/checkers/keeper"
+	"github.com/alice/checkers/x/checkers/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/stretchr/testify/assert"
-
-	"github.com/alice/checkers/x/checkers/types"
 )
 
-func createTestNextGame(keeper *Keeper, ctx sdk.Context) types.NextGame {
+func createTestNextGame(keeper *keeper.Keeper, ctx sdk.Context) types.NextGame {
 	item := types.NextGame{
 		Creator: "any",
 	}
