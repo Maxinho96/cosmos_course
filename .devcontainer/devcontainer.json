@@ -42,5 +42,8 @@
 	"remoteUser": "vscode",
 	"features": {
 		"rust": "latest"
-	}
+	},
+	"workspaceMount": "source=workspace-volume,target=/workspace,type=volume",
+	"workspaceFolder": "/workspace",
+	"postCreateCommand": "sudo chown vscode ."
 }
